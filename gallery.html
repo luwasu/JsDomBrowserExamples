@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Gallery</title>
+		<style>
+			#gallery { border: black solid 1px; margin: 20px; width: 500px; position: relative; overflow: hidden; height: 300px; }
+			img { width: 100%; cursor: pointer; }
+		</style>
+		<script src="lib/jquery.js"></script>
+	</head>
+	<body>
+
+		<!--display: none;-->
+
+		<div id="gallery">
+			<img src="images/image_0.jpg"/>
+			<img src="images/image_1.jpg"/>
+			<img src="images/image_2.jpg"/>
+			<img src="images/image_3.jpg"/>
+			<img src="images/image_4.jpg"/>
+			<img src="images/image_5.jpg"/>
+			<img src="images/image_6.jpg"/>
+			<img src="images/image_7.jpg"/>
+			<img src="images/image_8.jpg"/>
+		</div>
+
+	</body>
+
+<script>
+
+	//jQuery Solution
+
+	let slideUp = true;
+	$('img').click(function () {
+		if ($(this).is(':first-child')) {
+			slideUp = true;
+		} else if ($(this).is(':last-child')) {
+			slideUp = false;
+		}
+		slideUp ? $(this).slideUp() : $(this).prev().slideDown();
+	});
+
+	// Vanilla JS solution
+
+	const gallery=8;
+	let count=0
+	document.querySelectorAll(' div > img').forEach(function (e){
+		e.addEventListener('click',function(elem){
+			elem.target.style.display='none';
+			count++
+			if(count>gallery){
+				document.querySelectorAll('div > img').forEach(function (e){
+					e.style.display='block'
+				})
+				count=0
+			}
+		})
+	})
+
+
+
+
+</script>
+</html>
