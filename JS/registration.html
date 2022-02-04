@@ -21,5 +21,24 @@
 			<input type="submit" name="submit" value="Register"/>
 		</form>
 
+	<script>
+		let form = document.querySelector('form');
+
+		form.addEventListener('submit', function (e) {
+
+			if (form.pw1.value !== form.pw2.value) {
+				alert('Your passwords do not match!')
+				console.log('pw1 = ' + form.pw1.value)
+				console.log('pw2 = ' + form.pw2.value)
+				e.preventDefault();
+			} else {
+				alert('your passwords match;-)')
+			}
+		})
+
+	</script>
+
+
+
 	</body>
 </html>
