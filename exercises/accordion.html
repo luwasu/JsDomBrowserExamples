@@ -48,30 +48,20 @@
 				<p>Dies versetzt Bergbauunternehmen und Metallhändler derzeit in Euphorie. Der Metallgehalt von Elektrofahrzeugen ist in der Regel höher als derjenige von Autos mit herkömmlichen Verbrennungsmotoren. Zudem muss für die Elektrifizierung der Mobilität eine ausgedehnte Infrastruktur mit Ladestationen, Netzwerken und zusätzlichen Energieanlagen erstellt werden. In den Batterien und anderen Geräten werden dabei nicht nur «exotische» Rohstoffe wie Lithium, Kobalt oder Vanadium verwendet, sondern, unter anderem, auch alte Schlachtrösser der Industrialisierung wie Kupfer, Nickel und Aluminium.</p>
 			</div>
 		</article>
+
+	<script>
+		let article = document.querySelectorAll('article');
+
+		article.forEach(function (article){
+			let div = article.querySelector('div');
+			div.style.display = 'none'
+			article.querySelector('h1').addEventListener('click', function (){
+				div.style.display = div.style.display === 'none' ? 'block' : 'none';
+			})
+		})
+
+
+	</script>
+
 	</body>
-     <script>
-
-		 // jQuery Solution
-		 $('h1').click(function () {
-			 $(this).next().slideToggle(1000);
-		 });
-
-		 $('article > div').hide();
-
-
-
-		 // Vanilla JS solution
-
-		 // let articleDiv = document.querySelectorAll('body article div'); // take all the div after the article
-		 // let articleDiv = document.querySelectorAll('article > div'); // take the div that come directly after article
-		 //
-         // articleDiv[0].style.display='hidden';
-		 //
-         // foldAllDiv(articleDiv);
-         // function foldAllDiv (array) {
-         //     for (let i = 0; i < array.length ; i++) {
-         //         array[i].style.display='none';
-         //     }
-         // }
-     </script>
 </html>

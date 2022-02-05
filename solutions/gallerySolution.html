@@ -43,32 +43,23 @@
         });
 
 
+        // Vanilla exercises
+        const quantityOfImg = 8;
+        let imgCounter = 0;
 
-
-
-
-
-
-
-
-        // Vanilla JS
-
-        // const quantityOfImg = 8;
-        // let imgCounter = 0;
-        //
-        // document.querySelectorAll('div > img').forEach(img => {
-        //     imgCounter++;
-        //     img.addEventListener('click', function (e) {
-        //         e.target.style.display = 'none';
-        //         imgCounter++;
-        //         if (imgCounter > quantityOfImg) {
-        //             document.querySelectorAll('div > img').forEach(img => {
-        //                 img.style.display = 'block';
-        //             })
-        //             imgCounter = 0;
-        //         }
-        //     })
-        // });
+        document.querySelectorAll('div > img').forEach(img => {
+            imgCounter++;
+            img.addEventListener('click', function (e) {
+                e.target.style.display = 'none';
+                imgCounter++;
+                if (imgCounter > quantityOfImg) {
+                    document.querySelectorAll('div > img').forEach(img => {
+                        img.style.display = 'block';
+                    })
+                    imgCounter = 0;
+                }
+            })
+        });
 
     </script>
 </html>
